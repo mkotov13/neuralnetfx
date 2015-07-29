@@ -64,7 +64,6 @@ nn2 <- neuralnet(fx.t~fx.tm1+fx.tm2+fx.tm3+fx.tm4+fx.tm5+fx.tm6+fx.tm7+fx.tm8+fx
 
 head(fx.lags)
 
-nn
 plot(nn2)
 
 ### running and saving all 5 repetitions
@@ -94,7 +93,6 @@ abline(v=c(1:25))
 fx.lags.300 <- fx.lags[1:300,2:4]
 pred <- compute(nn2, fx.lags.300)
 head(fx.lags.100)
-?
 
 plot(fx.lags[100:1,1], type="l", col="blue")
 plot(pred$net.result, type="l", col="red")
@@ -106,12 +104,6 @@ plot(fx.lags[300:1,1], type="l", col="blue")
 abline(v=200)
 plot(pred$net.result, type="l", col="red")
 abline(v=200)
-
-plot(fx.lags[300:101,1], type="l", col="blue")
-plot(pred$net.result[101:300], type="l", col="red")
-
-plot(fx.lags[300:251,1], type="l", col="blue")
-plot(pred$net.result[251:300], type="l", col="red")
 
 
 
